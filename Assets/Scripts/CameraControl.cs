@@ -10,8 +10,13 @@ public class CameraControl : MonoBehaviour
 
 	public Camera MainCamera;
 	public Camera OverlookCamera;
+  public Camera CameraVR;
 	public GameObject CameraObject;
 	public GameObject head;
+  public GameObject RightHand;
+  public GameObject LeftHand;
+  public GameObject BodyRightHand;
+  public GameObject BodyLeftHand;
 	public SteamVR_Action_Boolean triggerClick;
     public SteamVR_Action_Boolean interfaceClick;
     private Button[] box=new Button[10];
@@ -21,6 +26,7 @@ public class CameraControl : MonoBehaviour
     void Awake()
     {
 		OverlookCamera.enabled = false;
+    MainCamera.enabled = false;
     }
     void Start()
     {
@@ -34,6 +40,9 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
         CameraObject.transform.position = head.transform.position + CameraObject.transform.forward*0.05f - CameraObject.transform.right*0.15f + CameraObject.transform.up*0.05f;
+        CameraVR.transform.position = CameraObject.transform.position;
+        LeftHand.transform.position = BodyLeftHand.transform.position;
+        RightHand.transform.position = BodyRightHand.transform.position;
     }
     private void CameraOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {

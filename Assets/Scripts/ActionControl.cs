@@ -27,22 +27,22 @@ public class ActionControl : MonoBehaviour
     private void VectorOption(SteamVR_Action_Vector2 fromAction, SteamVR_Input_Sources fromSource,Vector2 axis, Vector2 delta)
     {
         //put your stuff here
-        Debug.Log("Success!!");
+        Debug.Log("Success!!" + axis);
         _input.move=axis;
 
     }
     private void JumpOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         //put your stuff here
-        Debug.Log("Success!!");
+        Debug.Log("Success jump!!");
         _input.jump=true;
 
     }
     private void PoseOption(SteamVR_Action_Pose fromAction, SteamVR_Input_Sources fromSource)
     {
         //put your stuff here
-        Debug.Log("Success!!");
-        _input.look=new Vector2(fromAction.angularVelocity.x-fromAction.lastAngularVelocity.x,fromAction.angularVelocity.y-fromAction.lastAngularVelocity.y);
+        //Debug.Log("Success!!");
+        //_input.look=new Vector2(fromAction.angularVelocity.x-fromAction.lastAngularVelocity.x,fromAction.angularVelocity.y-fromAction.lastAngularVelocity.y);
 
     }
 }
