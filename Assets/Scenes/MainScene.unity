@@ -6916,6 +6916,9 @@ MonoBehaviour:
   triggerClick:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
+  interfaceClick:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
 --- !u!114 &8616685848757301962
 MonoBehaviour:
   m_ObjectHideFlags: 0

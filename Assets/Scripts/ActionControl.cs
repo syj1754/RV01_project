@@ -28,7 +28,7 @@ public class ActionControl : MonoBehaviour
     {
         //put your stuff here
         Debug.Log("Success!!");
-        _input.move=fromAction.delta;
+        _input.move=axis;
 
     }
     private void JumpOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
