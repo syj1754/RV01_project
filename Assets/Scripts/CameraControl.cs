@@ -12,6 +12,9 @@ public class CameraControl : MonoBehaviour
 	public Camera MainCamera;
 	public Camera OverlookCamera;
   public Camera CameraVR;
+   public Button button1;
+    public Button button2;
+     public Button button3;
 	public GameObject CameraObject;
 	public GameObject head;
   public GameObject RightHand;
@@ -22,7 +25,7 @@ public class CameraControl : MonoBehaviour
     public SteamVR_Action_Boolean interfaceClick;
     private Button[] box=new Button[10];
     private bool isInterface=false;
-    private int index=0;
+    private int index=-1;
     // Start is called before the first frame update
     void Awake()
     {
@@ -33,8 +36,9 @@ public class CameraControl : MonoBehaviour
     {
     	triggerClick.AddOnStateUpListener(CameraOption, SteamVR_Input_Sources.Any);
     	interfaceClick.AddOnStateUpListener(InterfaceOption, SteamVR_Input_Sources.Any);
-    	//box[0]=;
-    	//box[1]=;
+    	box[0]=button1;
+    	box[1]=button2;
+        box[2]=button3;
     	//OverlookCamera.enabled = false;
     }
     // Update is called once per frame
@@ -52,7 +56,11 @@ public class CameraControl : MonoBehaviour
         if(!isInterface){
         	//MainCamera.enabled=!MainCamera.enabled;
 			OverlookCamera.enabled=!OverlookCamera.enabled;
-		}
+		}else{
+            isInterface=!isInterface;
+            box[index].onClick.Invoke();;
+            index=0;
+        }
     }
     private void InterfaceOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
@@ -60,12 +68,12 @@ public class CameraControl : MonoBehaviour
         Debug.Log("Success!!");
         if(!isInterface){
         	isInterface=!isInterface;
-        	//box[index]=
-        	index++;
+        	box[index].Select();
+            index++;
+
         }else{
-        	isInterface=!isInterface;
-        	box[index].onClick.Invoke();;
-        	index=0;
+        	box[index].Select();
+            index++;
         }
     }
     void OnCameraOption(InputValue value){
