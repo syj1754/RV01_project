@@ -42,6 +42,8 @@ namespace Valve.VR.InteractionSystem
 
 		public bool allowToggleTo2D = true;
 
+		public Camera MainCamera;
+
 
 		//-------------------------------------------------
 		// Singleton instance of the Player. Only one can exist at a time.
@@ -409,6 +411,10 @@ namespace Valve.VR.InteractionSystem
 			rigSteamVR.SetActive( rig == rigSteamVR );
 			rig2DFallback.SetActive( rig == rig2DFallback );
 
+			if( rig == rigSteamVR ){
+
+				MainCamera.enabled=false;
+			}
 			if ( audioListener )
 			{
 				audioListener.transform.parent = hmdTransform;

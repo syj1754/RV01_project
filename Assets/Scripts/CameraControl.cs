@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class CameraControl : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class CameraControl : MonoBehaviour
     void Awake()
     {
 		OverlookCamera.enabled = false;
-    MainCamera.enabled = false;
+        //UnityEngine.XR.InputTracking.disablePositionalTracking = true;
     }
     void Start()
     {
@@ -39,8 +40,8 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraObject.transform.position = head.transform.position + CameraObject.transform.forward*0.05f - CameraObject.transform.right*0.15f + CameraObject.transform.up*0.05f;
-        CameraVR.transform.position = CameraObject.transform.position;
+        transform.localRotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,0,Player.instance.hmdTransform.forward.z));
+        CameraObject.transform.position = head.transform.position + CameraObject.transform.forward*0.08f - CameraObject.transform.right*0f + CameraObject.transform.up*0.05f;
         LeftHand.transform.position = BodyLeftHand.transform.position;
         RightHand.transform.position = BodyRightHand.transform.position;
     }
@@ -49,7 +50,7 @@ public class CameraControl : MonoBehaviour
         //put your stuff here
         Debug.Log("Success!!");
         if(!isInterface){
-        	MainCamera.enabled=!MainCamera.enabled;
+        	//MainCamera.enabled=!MainCamera.enabled;
 			OverlookCamera.enabled=!OverlookCamera.enabled;
 		}
     }
