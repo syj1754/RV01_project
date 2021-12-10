@@ -44,7 +44,8 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.localRotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,0,Player.instance.hmdTransform.forward.z));
+        transform.localRotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,0,Player.instance.hmdTransform.forward.z));
+        Player.instance.hmdTransform.localRotation=Quaternion.LookRotation(new Vector3(0,Player.instance.hmdTransform.forward.y,0));
         CameraObject.transform.position = head.transform.position + CameraObject.transform.forward*0.08f - CameraObject.transform.right*0f + CameraObject.transform.up*0.05f;
         LeftHand.transform.position = BodyLeftHand.transform.position;
         RightHand.transform.position = BodyRightHand.transform.position;
