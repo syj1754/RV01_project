@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 7e0f3327b1e75514ca2247ec17d7f242
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Type_Block_1: {fileID: 5832314462925366284, guid: 6c64c8f7aad0e64448452f183476310e, type: 3}
+  - Type_Block_2: {fileID: 7058051727257918089, guid: ef6e566cf001c2b4581df485408836d4, type: 3}
+  - Type_Block_3: {fileID: 1648686353018843767, guid: 438e351e5cf432445955727d714983a2, type: 3}
+  - Type_Block_4: {fileID: 128176173874048580, guid: 7bd6b14c4b442e94f944308c205d2c1a, type: 3}
+  - Type_Block_5: {fileID: 5023811098295863499, guid: e50b2ce43854e3640a7eba674bc96b21, type: 3}
+  - Type_Block_6: {fileID: 7370567156689407539, guid: d0948d185d41b714db30b4bdb18c1aa2, type: 3}
+  - Type_Block_7: {fileID: 7678099341399472185, guid: 027eb239f7c746a44b9e7512004f956a, type: 3}
+  - Type_Block_8: {fileID: 7042682198383754285, guid: b0370b9c21f2dfc438c4b4442cbd0666, type: 3}
+  - Type_Block_9: {fileID: 562344685518327290, guid: 10a3f67810772e442a1386d472e48a00, type: 3}
+  - Type_Corner_1: {fileID: 9064652494172134048, guid: 5fafc6d384dfba84ca662c77ad130b50, type: 3}
+  - Type_Corner_2: {fileID: 5324354030971139161, guid: 006769332e8d6fe498808b11c45329db, type: 3}
+  - Type_Corner_3: {fileID: 8324180515150366318, guid: c117186f685493744af704a0025d26bb, type: 3}
+  - Type_Corner_4: {fileID: 820339893325174925, guid: 1ad93b910194fb14e9512ed60a7c9579, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,6 +6,9 @@ using UnityEditor;
 
 public class StartingMenu : MonoBehaviour
 {
+    void Awake(){
+        DontDestroyOnLoad(transform.gameObject);
+    }
     void Start()
     {
 
@@ -24,6 +27,10 @@ public class StartingMenu : MonoBehaviour
     public void Quit()
     {
         EditorApplication.Exit(0);
+    }
+
+    public void SetDifficulty()
+    {
     }
 
     public void Options()
