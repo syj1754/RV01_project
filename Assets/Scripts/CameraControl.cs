@@ -11,16 +11,12 @@ public class CameraControl : MonoBehaviour
 
 	public Camera MainCamera;
 	public Camera OverlookCamera;
-  public Camera CameraVR;
-   public Button button1;
+    public Camera CameraVR;
+    public Button button1;
     public Button button2;
-     public Button button3;
+    public Button button3;
 	public GameObject CameraObject;
 	public GameObject head;
-  public GameObject RightHand;
-  public GameObject LeftHand;
-  public GameObject BodyRightHand;
-  public GameObject BodyLeftHand;
 	public SteamVR_Action_Boolean triggerClick;
     public SteamVR_Action_Boolean interfaceClick;
     private Button[] box=new Button[10];
@@ -30,6 +26,9 @@ public class CameraControl : MonoBehaviour
     void Awake()
     {
 		OverlookCamera.enabled = false;
+        if(Player.instance.hmdTransform==null){
+            CameraVR.enabled = false;
+        }
         //UnityEngine.XR.InputTracking.disablePositionalTracking = true;
     }
     void Start()
@@ -48,8 +47,9 @@ public class CameraControl : MonoBehaviour
         transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,0,Player.instance.hmdTransform.forward.z));
         //Player.instance.hmdTransform.rotation=Quaternion.LookRotation(new Vector3(0,Player.instance.hmdTransform.forward.y,0));
         CameraObject.transform.position = head.transform.position + head.transform.forward*0.1f + head.transform.up*0.05f;
-        LeftHand.transform.position = BodyLeftHand.transform.position;
-        RightHand.transform.position = BodyRightHand.transform.position;
+        if(OverlookCamera.enabled==true){
+            OverlookCamera.transform.position=new Vector3(transform.position.x,15,transform.position.z);
+        }
     }
     private void CameraOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {

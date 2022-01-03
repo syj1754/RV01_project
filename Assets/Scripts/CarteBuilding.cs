@@ -6,8 +6,10 @@ public class CarteBuilding : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject[] Types;
-    public int difficulty = 2;
+    public GameObject[] Fortifications;
+    public int difficulty = 1;
     void Awake(){
+    	Instantiate(Fortifications[difficulty-1], new Vector3(0,0,0), Quaternion.identity);
     	int x=4*difficulty+2;
     	int[,] porte = new int[x, x];
     	for(int i=0;i<x;i++){
@@ -53,6 +55,8 @@ public class CarteBuilding : MonoBehaviour
     			}else if(i==0){
     				pos2=0;
     			}
+    			int seed = (int)System.DateTime.Now.Ticks+j;
+    			Random.InitState(seed);
     			int ram = Random.Range(0, 9);
     			if(j%difficulty==0){
     				
@@ -60,8 +64,10 @@ public class CarteBuilding : MonoBehaviour
     			}
     			pos=7-i%2*14f;
     			pos2=7-i/2*14f;
-    			ram = Random.Range(9, 12);
-    			Instantiate(Types[ram], new Vector3((j%difficulty+1)*pos,0f,(j/difficulty+1)*pos2), Quaternion.identity);
+    			seed = (int)System.DateTime.Now.Ticks+j;
+    			Random.InitState(seed);
+    			ram = Random.Range(9, 13);
+    			Instantiate(Types[ram], new Vector3((j%difficulty+1)*pos,0f,(j/difficulty+1)*pos2), Quaternion.Euler(0, 90*Random.Range(0,4), 0));
     		}
     	}
     }
