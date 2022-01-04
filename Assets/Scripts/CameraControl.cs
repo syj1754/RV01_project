@@ -44,11 +44,13 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
         //Player.instance.hmdTransform.rotation=Quaternion.Euler(20.0f, 50.0f, 0.0f);
-        transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,0,Player.instance.hmdTransform.forward.z));
         //Player.instance.hmdTransform.rotation=Quaternion.LookRotation(new Vector3(0,Player.instance.hmdTransform.forward.y,0));
         CameraObject.transform.position = head.transform.position + head.transform.forward*0.1f + head.transform.up*0.05f;
         if(OverlookCamera.enabled==true){
             OverlookCamera.transform.position=new Vector3(transform.position.x,15,transform.position.z);
+            OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x+90,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z));
+        }else{
+            transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,0,Player.instance.hmdTransform.forward.z));
         }
     }
     private void CameraOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)

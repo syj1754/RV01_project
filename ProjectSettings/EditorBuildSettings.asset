@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PauseScene.unity
     guid: b433d97227fae494690ac9da56dba51a
   m_configObjects:
-    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 3942599b4ede059449333bd4c9ed413d, type: 2}
+    Unity.XR.OpenVR.Settings: {fileID: 0}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b57485f36a4236e4f989f93528f58519, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6400ad548425be044bd4bb473f905c9b, type: 2}
