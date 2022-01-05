@@ -11,6 +11,7 @@ public class CarteBuilding : MonoBehaviour
     public GameObject[] Fortifications;
     public int difficulty = 1;
     void Awake(){
+    	difficulty= PlayerPrefs.GetInt ("difficulty");
     	Instantiate(Fortifications[difficulty-1], new Vector3(0,0,0), Quaternion.identity);
     	int x=4*difficulty+2;
     	int[,] porte = new int[x, x];

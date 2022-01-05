@@ -13,6 +13,8 @@ public class ActionControl : MonoBehaviour
 	public SteamVR_Action_Vector2 move;
 	//public SteamVR_Action_Vector2 camera;
 	private StarterAssetsInputs _input;
+    private float x = 0;
+    private float z = 0;
 	public SteamVR_Action_Boolean jump;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,9 @@ public class ActionControl : MonoBehaviour
     {
         //put your stuff here
         Debug.Log("Success!!" + axis);
-        _input.move=axis;
+        _input.move=new Vector2(Player.instance.hmdTransform.position.x-x+axis.x,Player.instance.hmdTransform.position.z-z+axis.y);
+        x=Player.instance.hmdTransform.position.x;
+        z=Player.instance.hmdTransform.position.z;
 
     }
     private void JumpOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)

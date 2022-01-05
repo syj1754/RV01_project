@@ -349,6 +349,7 @@
 "Assets/Scripts/ActionControl.cs"
 "Assets/Scripts/CameraControl.cs"
 "Assets/Scripts/CarteBuilding.cs"
+"Assets/Scripts/FinalControl.cs"
 "Assets/Scripts/InterfaceControl.cs"
 "Assets/Scripts/PorteControl.cs"
 "Assets/Scripts/PushControl.cs"

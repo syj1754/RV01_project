@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
 public class StartingMenu : MonoBehaviour
 {
+    public Toggle[] toggles;
     void Awake(){
+        int difficulty= PlayerPrefs.GetInt ("difficulty");
+        if (difficulty>0 && difficulty<4){
+            toggles[difficulty-1].isOn=true;
+        }else{
+            toggles[0].isOn=true;
+        }
         Camera VRCamera;
         GameObject gameObject=GameObject.Find("OverlookCamera");
         if(gameObject!=null){
@@ -48,6 +56,13 @@ public class StartingMenu : MonoBehaviour
 
     public void SetDifficulty()
     {
+        if(toggles[0].isOn){
+            PlayerPrefs.SetInt("difficulty",1);
+        }else if(toggles[1].isOn){
+            PlayerPrefs.SetInt("difficulty",2);
+        }else if(toggles[2].isOn){
+            PlayerPrefs.SetInt("difficulty",3);
+        }
     }
 
     public void BackToMenu()

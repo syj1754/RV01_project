@@ -2907,7 +2907,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.5572755, y: 1}
+    m_SensorSize: {x: 2.5634675, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_Device: 0
   m_PoseSource: 2
   m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 1
+  m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
 --- !u!4 &914095909656069647
