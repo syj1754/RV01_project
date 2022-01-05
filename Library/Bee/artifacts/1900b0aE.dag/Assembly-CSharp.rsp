@@ -364,6 +364,9 @@
 "Assets/StarterAssets/TutorialInfo/Scripts/Readme.cs"
 "Assets/StartingInterface/Scripts/GraphicRaycasterScript.cs"
 "Assets/StartingInterface/Scripts/StartingMenu.cs"
+"Assets/Youe++/Gaze UI/Exemple/Scripts/AnimatorUtility.cs"
+"Assets/Youe++/Gaze UI/Exemple/Scripts/SmoothMouseLook.cs"
+"Assets/Youe++/Gaze UI/Scripts/EyeRaycaster.cs"
 -langversion:8.0
 
 /deterministic

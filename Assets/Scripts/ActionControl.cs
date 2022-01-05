@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using StarterAssets;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 

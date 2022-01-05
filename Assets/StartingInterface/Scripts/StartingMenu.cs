@@ -7,7 +7,20 @@ using UnityEditor;
 public class StartingMenu : MonoBehaviour
 {
     void Awake(){
-        DontDestroyOnLoad(transform.gameObject);
+        Camera VRCamera;
+        GameObject gameObject=GameObject.Find("OverlookCamera");
+        if(gameObject!=null){
+            VRCamera=gameObject.GetComponent<Camera>();
+            Canvas canvas=GetComponent<Canvas>();
+            canvas.worldCamera = VRCamera;
+        }else{
+            Camera MainCamera;
+            gameObject=GameObject.Find("Main Camera");
+            MainCamera=gameObject.GetComponent<Camera>();
+            MainCamera.enabled=true;
+            Canvas canvas=GetComponent<Canvas>();
+            canvas.worldCamera = MainCamera;
+        }
     }
     void Start()
     {
@@ -26,25 +39,20 @@ public class StartingMenu : MonoBehaviour
 
     public void Quit()
     {
-        EditorApplication.Exit(0);
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;//编辑状态下退出
+        #else
+        Application.Quit();//打包编译后退出
+        #endif
     }
 
     public void SetDifficulty()
     {
     }
 
-    public void Options()
-    {
-        SceneManager.LoadScene("OptionScene");
-    }
-
     public void BackToMenu()
     {
-        SceneManager.LoadScene("StartingScene");
+        SceneManager.LoadScene("MainScene");
     }
 
-    public void Pause()
-    {
-        SceneManager.LoadScene("PauseScene");
-    }
 }
