@@ -351,6 +351,7 @@
 "Assets/Scripts/CarteBuilding.cs"
 "Assets/Scripts/FinalControl.cs"
 "Assets/Scripts/InterfaceControl.cs"
+"Assets/Scripts/MenuControl.cs"
 "Assets/Scripts/PorteControl.cs"
 "Assets/Scripts/PushControl.cs"
 "Assets/StarterAssets/FirstPersonController/Scripts/BasicRigidBodyPush.cs"

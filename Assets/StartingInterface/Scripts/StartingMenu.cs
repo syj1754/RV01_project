@@ -9,25 +9,29 @@ public class StartingMenu : MonoBehaviour
 {
     public Toggle[] toggles;
     void Awake(){
-        int difficulty= PlayerPrefs.GetInt ("difficulty");
-        if (difficulty>0 && difficulty<4){
-            toggles[difficulty-1].isOn=true;
-        }else{
-            toggles[0].isOn=true;
-        }
+        
         Camera VRCamera;
         GameObject gameObject=GameObject.Find("OverlookCamera");
         if(gameObject!=null){
             VRCamera=gameObject.GetComponent<Camera>();
             Canvas canvas=GetComponent<Canvas>();
+            VRCamera.enabled=true;
             canvas.worldCamera = VRCamera;
         }else{
             Camera MainCamera;
             gameObject=GameObject.Find("Camera");
             MainCamera=gameObject.GetComponent<Camera>();
             MainCamera.enabled=true;
+            MainCamera.transform.position=new Vector3(0f, 15f, 0f);
             Canvas canvas=GetComponent<Canvas>();
             canvas.worldCamera = MainCamera;
+        }
+        int difficulty= PlayerPrefs.GetInt ("difficulty");
+        if (difficulty>0 && difficulty<4){
+            toggles[difficulty-1].isOn=true;
+        }else{
+            toggles[0].isOn=true;
+           
         }
     }
     void Start()
@@ -67,7 +71,7 @@ public class StartingMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.UnloadSceneAsync("StartingScene");
     }
 
 }

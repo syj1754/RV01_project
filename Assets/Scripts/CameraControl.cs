@@ -27,7 +27,7 @@ public class CameraControl : MonoBehaviour
     void Awake()
     {
         if(OverlookCamera!=null){
-            OverlookCamera.enabled = false;
+            //OverlookCamera.enabled = false;
             if(Player.instance.hmdTransform==null){
                 CameraVR.enabled = false;
             }
@@ -48,14 +48,14 @@ public class CameraControl : MonoBehaviour
         //Player.instance.hmdTransform.rotation=Quaternion.Euler(20.0f, 50.0f, 0.0f);
         //Player.instance.hmdTransform.rotation=Quaternion.LookRotation(new Vector3(0,Player.instance.hmdTransform.forward.y,0));
         if (CameraObject!=null){
-            CameraObject.transform.position = head.transform.position + head.transform.forward*0.1f + head.transform.up*0.05f;
+            CameraObject.transform.position = head.transform.position + head.transform.forward*0.1f + head.transform.up*0.2f;
         }
         if (OverlookCamera!=null){
             if (OverlookCamera.enabled==true){
                 if(isStopped){
                     //OverlookCamera.transform.rotation=MainCamera.transform.rotation;
                     OverlookCamera.transform.position=new Vector3(transform.position.x,15,transform.position.z);
-                    OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x-90,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z));
+                    OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z));
                 }else{
                     OverlookCamera.transform.position=new Vector3(transform.position.x,15,transform.position.z);
                     OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x+90,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z+180));

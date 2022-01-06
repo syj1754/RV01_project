@@ -2907,7 +2907,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.4629629, y: 1}
+    m_SensorSize: {x: 2.5058324, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6488,7 +6488,7 @@ MonoBehaviour:
   lefthandPrefab: {fileID: 9014308417434412528, guid: 3b127469a585c484fba12f787d90b709, type: 3}
   righthandPrefab: {fileID: 7640206809728677130, guid: ed262005c2612154b8701bf2d55a1745, type: 3}
   triggerClick:
-    actionPath: /actions/default/in/GrabPinch
+    actionPath: /actions/default/in/Push
     needsReinit: 0
 --- !u!114 &8616685848757301960
 MonoBehaviour:
@@ -6606,11 +6606,11 @@ MonoBehaviour:
   CameraObject: {fileID: 4135013735391923103}
   head: {fileID: 8680391641771082080}
   triggerClick:
-    actionPath: /actions/default/in/GrabGrip
-    needsReinit: 0
-  interfaceClick:
     actionPath: 
     needsReinit: 1
+  interfaceClick:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
   menu:
     actionPath: /actions/default/in/Menu
     needsReinit: 0
