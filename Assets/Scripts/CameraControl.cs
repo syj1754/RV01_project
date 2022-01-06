@@ -53,11 +53,12 @@ public class CameraControl : MonoBehaviour
         if (OverlookCamera!=null){
             if (OverlookCamera.enabled==true){
                 if(isStopped){
-                    OverlookCamera.transform.rotation=MainCamera.transform.rotation;
-                    //OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z));
+                    //OverlookCamera.transform.rotation=MainCamera.transform.rotation;
+                    OverlookCamera.transform.position=new Vector3(transform.position.x,15,transform.position.z);
+                    OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x-90,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z));
                 }else{
                     OverlookCamera.transform.position=new Vector3(transform.position.x,15,transform.position.z);
-                    OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x+90,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z));
+                    OverlookCamera.transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x+90,Player.instance.hmdTransform.forward.y,Player.instance.hmdTransform.forward.z+180));
                 }
             }else{
                 transform.rotation=Quaternion.LookRotation(new Vector3(Player.instance.hmdTransform.forward.x,0,Player.instance.hmdTransform.forward.z));
@@ -75,7 +76,7 @@ public class CameraControl : MonoBehaviour
             }
 		}else{
             isInterface=!isInterface;
-            box[index].onClick.Invoke();;
+            box[index - 1].onClick.Invoke();;
             index=0;
         }
     }

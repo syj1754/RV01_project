@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2907,7 +2907,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.5634675, y: 1}
+    m_SensorSize: {x: 2.4629629, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_Device: 0
   m_PoseSource: 2
   m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
+  m_TrackingType: 1
   m_UpdateType: 0
   m_UseRelativeTransform: 0
 --- !u!4 &914095909656069647
@@ -6606,8 +6606,8 @@ MonoBehaviour:
   CameraObject: {fileID: 4135013735391923103}
   head: {fileID: 8680391641771082080}
   triggerClick:
-    actionPath: 
-    needsReinit: 1
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
   interfaceClick:
     actionPath: 
     needsReinit: 1

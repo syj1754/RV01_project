@@ -34,9 +34,9 @@ public class ActionControl : MonoBehaviour
     {
         //put your stuff here
         Debug.Log("Success!!" + axis);
-        _input.move=new Vector2(Player.instance.hmdTransform.position.x-x+axis.x,Player.instance.hmdTransform.position.z-z+axis.y);
-        x=Player.instance.hmdTransform.position.x;
-        z=Player.instance.hmdTransform.position.z;
+        _input.move=new Vector2(Player.instance.hmdTransform.position.x*0-x+axis.x,Player.instance.hmdTransform.position.z*0-z+axis.y);
+        //x=Player.instance.hmdTransform.position.x*0.2f;
+        //z=Player.instance.hmdTransform.position.z*0.2f;
 
     }
     private void JumpOption(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)

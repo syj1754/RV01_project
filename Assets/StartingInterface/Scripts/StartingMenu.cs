@@ -23,7 +23,7 @@ public class StartingMenu : MonoBehaviour
             canvas.worldCamera = VRCamera;
         }else{
             Camera MainCamera;
-            gameObject=GameObject.Find("Main Camera");
+            gameObject=GameObject.Find("Camera");
             MainCamera=gameObject.GetComponent<Camera>();
             MainCamera.enabled=true;
             Canvas canvas=GetComponent<Canvas>();
